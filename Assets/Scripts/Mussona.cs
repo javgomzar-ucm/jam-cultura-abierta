@@ -13,6 +13,7 @@ public class Mussona : MonoBehaviour
     public Transform focused_kid;
     public float speed;
     public float radius;
+    public GameManager manager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,16 +23,13 @@ public class Mussona : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (manager.score > 0)
         {
-            if (state == State.Following_Player)
-            {
-                state = State.Following_Kid;
-            }
-            else
-            {
-                state = State.Following_Player;
-            }
+            state = State.Following_Player;
+        }
+        else
+        {
+            state = State.Following_Kid;
         }
 
         Vector3 direction = new Vector3(0, 0, 0);

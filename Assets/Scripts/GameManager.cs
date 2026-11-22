@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public List<Transform> kids;
     public Mussona mussona;
+    public int score;
+    public TMP_Text score_text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,5 +31,6 @@ public class GameManager : MonoBehaviour
                 mussona.focused_kid = kid;
             }
         }
+        score_text.text = score.ToString();
     }
 }
