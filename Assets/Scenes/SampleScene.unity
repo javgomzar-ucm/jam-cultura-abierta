@@ -1795,6 +1795,7 @@ MonoBehaviour:
   focused_kid: {fileID: 0}
   speed: 10
   radius: 4
+  manager: {fileID: 1757373701}
 --- !u!1 &923767995
 GameObject:
   m_ObjectHideFlags: 0
