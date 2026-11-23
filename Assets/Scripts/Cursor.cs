@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
@@ -44,16 +44,8 @@ public class Cursor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            foreach(Panel panel in panels)
-            {
-                ColliderDistance2D d = panel.box_collider.Distance(box_collider);
-                if (d.isOverlapped)
-                {
-                    collided_panel = panel.GameObject();
-                    manager.score += panel.score;
-                    break;
-                }
-            }
+            Debug.Log($"Panel hit: {collided_panel.name}");
+            manager.score += collided_panel.GetComponent<Panel>().score;
         }
 
         float s = Mathf.Sin(2f * Mathf.PI / period_seconds * Time.time);
