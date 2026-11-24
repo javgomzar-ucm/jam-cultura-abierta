@@ -3,15 +3,19 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform player;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float cameraX;
+
     void Start()
     {
-        
+        cameraX = transform.position.x;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        transform.position = new Vector3(
+            cameraX,
+            player.position.y,
+            transform.position.z
+        );
     }
 }
